@@ -263,7 +263,7 @@ def start_watching_sms(session, destination_chat_id):
                 print(f"    - Found {len(sms_list)} SMS entries in the API response.")
                 
                 for sms_data in reversed(sms_list):
-                    if len(sms_data) > 5:
+                    if len(sms_data) >= 5:
                         dt, rc, sn, msg = str(sms_data[0]), str(sms_data[2]), str(sms_data[3]), str(sms_data[4])
                         
                         if not msg or not rc or rc.strip() == '0' or len(rc.strip()) < 5:
