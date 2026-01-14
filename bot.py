@@ -28,7 +28,7 @@ BUTTON_TEXT1 = "Number Channel 🚀"
 BUTTON_TEXT2 = "Owner 👑"
 
 # --- Telegram Configuration ---
-TELEGRAM_BOT_TOKEN = "8191040733:AAEUWrRCLf0HmxWbcv1t73go5DsWwP38lEg"
+TELEGRAM_BOT_TOKEN = "8191040733:AAGvf-pvqVHwqmJh0cCyMKUjLnpSLzHICck"
 DEFAULT_GROUP_CHAT_ID = "-1003406789899" 
 DM_CHAT_ID = "8449115253" 
 
@@ -140,7 +140,7 @@ def format_telegram_message(recipient_number, sender_name, message, otp, sms_tim
 ```Note
 🔑 Wait for the next OTP!
 — don't wory!```
-*BOT BY  @Whatsappseller01*"""
+*BOT BY  https://t.me/Illuminate786*"""
 
     # Buat Inline Keyboard (Tombol URL)
     keyboard = [
@@ -339,23 +339,5 @@ def main():
     except Exception as e:
         print(f"\n[!!!] Critical startup error: {e}")
 
-# ================= RENDER FREE PORT FIX =================
-from flask import Flask
-import threading
-import os
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Bot Running"
-
-def run_flask():
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-
-threading.Thread(target=run_flask, daemon=True).start()
-# ======================================================
 if __name__ == "__main__":
     main()
-
