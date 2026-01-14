@@ -339,6 +339,23 @@ def main():
     except Exception as e:
         print(f"\n[!!!] Critical startup error: {e}")
 
+# ================= RENDER FREE PORT FIX =================
+from flask import Flask
+import threading
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot Running"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+threading.Thread(target=run_flask, daemon=True).start()
+# ======================================================
 if __name__ == "__main__":
     main()
 
